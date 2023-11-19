@@ -67,7 +67,6 @@ header {
 p {
   font-size: 1.8rem;
   font-family: "rifficbook";
-  text-align: center;
 }
 
 .p--first::first-letter {
@@ -536,8 +535,9 @@ footer {
 }
 @font-face {
   font-family: "rifficbook";
-  src: url("fonts/fontspring-demo-riffic-book-webfont.woff2") format("woff2"),
-    url("fonts/fontspring-demo-riffic-book-webfont.woff") format("woff");
+  src: url("/css/fonts/fontspring-demo-riffic-book-webfont.woff2")
+      format("woff2"),
+    url("/css/fonts/fontspring-demo-riffic-book-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -573,169 +573,4 @@ footer {
 .input {
   padding: 1.5rem 3.5rem;
   border: 1px solid #fff;
-}
-/* responsive design */ /* responsive design */ /* responsive design */
-/* responsive design */ /* responsive design */ /* responsive design */
-/* Apply specific styling for mobile devices */ /* responsive design */
-@media screen and (max-width: 1000px) {
-  .headbar-title {
-    left: 60px;
-    font-size: 2rem;
-  }
-
-  h1 {
-    font-size: 1.3rem;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .homecontainer {
-    background-size: 100% 80%;
-    height: 80vh;
-  }
-  .homecontainer--showyourwork {
-    height: 70vh;
-  }
-
-  .title {
-    font-size: 36px;
-    position: relative;
-    padding: 80px;
-    top: 20px;
-  }
-  .main-picture {
-    height: 300px;
-  }
-  .selfie {
-    left: 0%;
-  }
-
-  .main-picture-right {
-    left: 0;
-  }
-
-  .btn--primary {
-    font-size: 1.5rem;
-    position: relative;
-    top: -50px;
-  }
-
-  .grid-container {
-    grid-template: repeat(2, auto) / 1fr;
-    margin: 50px 10px;
-  }
-
-  hr {
-    width: 80%;
-  }
-  .grid-articlecontainer {
-    grid-template-columns: 0 100%;
-  }
-
-  .body--blog {
-    margin: 50px 60px;
-  }
-}
-@media screen and (max-width: 680px) {
-  .icon--right {
-    display: block;
-  }
-
-  .collapisble__content {
-    display: block;
-    position: absolute;
-    border: 2px solid #000000;
-    top: 60px;
-    background-color: #333;
-    padding: 5px;
-    border-radius: 5px;
-    right: 1.3px;
-  }
-
-  .collapisble__content li:hover {
-    background-color: #706666;
-    border-radius: 5px;
-  }
-  .collapisble--expanded .collapisble__content {
-    display: none;
-  }
-
-  .language-menu {
-    position: static;
-  }
-
-  .language-list {
-    top: 63px;
-  }
-
-  .body--blog {
-    margin: 0 30px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .card {
-    margin-bottom: 55px;
-  }
-
-  .headbar-title {
-    font-size: 1.54rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .homecontainer {
-    background-size: 100% 380px;
-    background-repeat: no-repeat;
-    height: 55vh;
-    position: relative;
-  }
-
-  .homecontainer--showyourwork {
-  }
-
-  .title {
-    font-size: 30px;
-    position: relative;
-    padding: 80px;
-    top: 20px;
-  }
-  .main-picture {
-    height: 200px;
-  }
-
-  .btn--primary {
-    font-size: 1.3rem;
-    position: relative;
-    top: -50px;
-  }
-
-  .grid-container--general {
-    margin: -40px 0;
-  }
-
-  .grid-container {
-    margin: 30px;
-  }
-
-  .details {
-    justify-content: space-between;
-  }
-
-  .search input {
-    margin-right: 10px;
-    width: 80%;
-  }
 }
