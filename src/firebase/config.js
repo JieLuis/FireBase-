@@ -6,9 +6,11 @@ const firebaseConfig = {
   projectId: "my-blog-f81a9",
   storageBucket: "my-blog-f81a9.appspot.com",
   messagingSenderId: "388734870497",
-  appId: "1:388734870497:web:7da937bd356821f48ea8a0",
+  appId: "1:388734870497:web:dea25de220d7c5028ea8a0",
 };
-
 firebase.initializeApp(firebaseConfig);
 
 const projectFirebase = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export { projectFirebase, timestamp };

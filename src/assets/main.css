@@ -66,7 +66,6 @@ header {
 
 p {
   font-size: 1.8rem;
-  font-family: "rifficbook";
 }
 
 .p--first::first-letter {
@@ -208,7 +207,7 @@ nav a {
   background: #372f2f;
   width: 90%;
   margin: 10px auto 0px;
-  border-radius: 50px;
+  border-radius: 25px;
   border: 3px #000000 solid;
   padding: 10px 20px;
 }
@@ -221,7 +220,7 @@ nav a {
   justify-content: center;
 }
 
-.search input {
+input {
   border: 10px;
   outline: 0;
   background: #807474;
@@ -229,7 +228,7 @@ nav a {
   flex: 1;
   color: white;
   padding: 10px 25px;
-  border-radius: 50px;
+  border-radius: 18px;
   font-size: 20px;
 }
 
@@ -243,10 +242,6 @@ nav a {
 
 .search .btn img {
   width: 30px;
-}
-
-.weather {
-  display: none;
 }
 
 .weather h1 {
@@ -297,9 +292,6 @@ nav a {
   margin-right: 10px;
 }
 
-.error {
-  display: none;
-}
 /* style the main content */
 
 article {
@@ -550,7 +542,7 @@ footer {
 .btn {
   font-size: 2.5rem;
   font-family: "rifficbook";
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 3px 10px;
   cursor: pointer;
   border: 0;

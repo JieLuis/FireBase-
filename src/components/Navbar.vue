@@ -7,7 +7,12 @@
     <h1 class="headbar-title">Thinkaboutmoonlight</h1>
 
     <nav class="collapisble collapisble--expanded">
-      <img class="icon icon--right" src="/images/icon-right.svg" alt="" />
+      <img
+        class="icon icon--right"
+        @click="handleClick"
+        src="../../images/icon-right.svg"
+        alt=""
+      />
       <ul class="collapisble__content">
         <li><a href="/index.html">Home</a></li>
         <li><a href="#">About</a></li>

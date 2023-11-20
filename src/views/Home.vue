@@ -12,7 +12,7 @@ import { ref, watch, watchEffect } from "vue";
 export default {
   setup() {
     const names = ["mario", "Sevval", "Can"];
-    const search = ref(""); 
+    const search = ref("");
     const handleClick = () => {};
 
     watch(search, () => {
