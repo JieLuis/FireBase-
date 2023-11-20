@@ -6,14 +6,17 @@
 
     <h1 class="headbar-title">Thinkaboutmoonlight</h1>
 
-    <nav class="collapisble collapisble--expanded">
+    <nav>
       <img
         class="icon icon--right"
         @click="handleClick"
         src="../../images/icon-right.svg"
         alt=""
       />
-      <ul class="collapisble__content">
+      <ul
+        v-if="showCollapisbleContent || screenWidth > 680"
+        class="collapisble__content"
+      >
         <li><a href="/index.html">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -29,6 +32,19 @@
   </header>
 </template>
 <script>
-export default {};
+import { ref } from "vue";
+import { useWindowSize } from "@vueuse/core";
+export default {
+  setup() {
+    const showCollapisbleContent = ref(false);
+    const handleClick = () => {
+      showCollapisbleContent.value = !showCollapisbleContent.value;
+    };
+    const { width } = useWindowSize();
+    const screenWidth = ref(width);
+
+    return { handleClick, showCollapisbleContent, screenWidth };
+  },
+};
 </script>
 <style lang=""></style>
