@@ -27,25 +27,34 @@
       v-model="password"
       required
     />
-
+    <div class="error">{{ error }}</div>
     <input type="submit" value="Sign Up" />
   </form>
 </template>
 <script>
 import { ref } from "vue";
+import useSignUp from "../../composable/useSignUp";
 
 export default {
   setup() {
+    const { error, signup } = useSignUp();
+
     const username = ref("");
     const email = ref("");
     const password = ref("");
 
-    const handleSubmit = () => {
-      console.log(username.value);
+    const handleSubmit = async () => {
+      await signup(email.value, password.value, username.value);
+      console.log("user signed up");
     };
 
-    return { username, email, password, handleSubmit };
+    return { username, email, password, handleSubmit, error };
   },
 };
 </script>
-<style lang=""></style>
+
+<style>
+.error {
+  color: red;
+}
+</style>

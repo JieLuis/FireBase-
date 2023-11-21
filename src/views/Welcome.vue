@@ -2,16 +2,40 @@
   <div class="">
     <p>Welcome</p>
     <div class="signOrLogForm">
-      <SignupForm />
-      <LoginForm />
+      <div v-if="showSignUp">
+        <SignupForm />
+        <p>
+          已有账户？
+          <button @click="handleClick">
+            <span>登录</span>
+          </button>
+        </p>
+      </div>
+      <div v-else>
+        <LoginForm />
+        <p>
+          还没有账户？
+          <button @click="handleClick">
+            <span>注册</span>
+          </button>
+        </p>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import SignupForm from "@/components/SignupForm.vue";
 import LoginForm from "@/components/LoginForm.vue";
+import { ref } from "vue";
 export default {
   components: { SignupForm, LoginForm },
+  setup() {
+    const showSignUp = ref(true);
+    const handleClick = () => {
+      showSignUp.value = !showSignUp.value;
+    };
+    return { showSignUp, handleClick };
+  },
 };
 </script>
 <style>
