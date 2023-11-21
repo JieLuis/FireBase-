@@ -1,6 +1,6 @@
-<template lang="">
-  <form @submit.prevent="handleSubmit" action="/signup" method="post">
-    <h2>Login in</h2>
+<template>
+  <form @submit.prevent="handleSubmit" action="/login" method="post">
+    <h2>Login</h2>
 
     <label for="email">Email:</label>
     <input
@@ -20,24 +20,34 @@
       required
     />
 
-    <input type="submit" value="Login in" />
+    <p class="error">{{ error }}</p>
+
+    <input type="submit" value="Login" />
   </form>
 </template>
+
 <script>
+import useLogin from "../../composable/useLogin";
 import { ref } from "vue";
 
 export default {
   setup() {
-    const username = ref("");
     const email = ref("");
     const password = ref("");
+    const error = ref(null);
 
-    const handleSubmit = () => {
-      console.log(username.value);
+    const handleSubmit = async () => {
+      const { error: loginError } = await useLogin(email.value, password.value);
+      error.value = loginError;
+
+      if (!error.value) {
+        console.log("User logged in");
+      }
     };
 
-    return { email, password, handleSubmit };
+    return { email, password, handleSubmit, error };
   },
 };
 </script>
-<style lang=""></style>
+
+<style></style>
