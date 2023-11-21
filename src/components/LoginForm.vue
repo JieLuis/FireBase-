@@ -31,7 +31,7 @@ import useLogin from "../../composable/useLogin";
 import { ref } from "vue";
 
 export default {
-  setup() {
+  setup(props, context) {
     const email = ref("");
     const password = ref("");
     const error = ref(null);
@@ -41,7 +41,7 @@ export default {
       error.value = loginError;
 
       if (!error.value) {
-        console.log("User logged in");
+        context.emit("login");
       }
     };
 

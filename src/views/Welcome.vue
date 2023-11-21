@@ -3,7 +3,7 @@
     <p>Welcome</p>
     <div class="signOrLogForm">
       <div v-if="showSignUp">
-        <SignupForm />
+        <SignupForm @signup="enterChatroom" />
         <p>
           已有账户？
           <button @click="handleClick">
@@ -12,7 +12,7 @@
         </p>
       </div>
       <div v-else>
-        <LoginForm />
+        <LoginForm @login="enterChatroom" />
         <p>
           还没有账户？
           <button @click="handleClick">
@@ -27,14 +27,19 @@
 import SignupForm from "@/components/SignupForm.vue";
 import LoginForm from "@/components/LoginForm.vue";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 export default {
   components: { SignupForm, LoginForm },
   setup() {
+    const router = useRouter();
     const showSignUp = ref(true);
+    const enterChatroom = () => {
+      router.push({ name: "chatroom" });
+    };
     const handleClick = () => {
       showSignUp.value = !showSignUp.value;
     };
-    return { showSignUp, handleClick };
+    return { showSignUp, handleClick, enterChatroom };
   },
 };
 </script>
