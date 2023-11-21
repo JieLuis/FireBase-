@@ -8,15 +8,13 @@
 
     <nav>
       <img
+        v-if="screenWidth < 760"
         class="icon icon--right"
         @click="handleClick"
         src="../../images/icon-right.svg"
         alt=""
       />
-      <ul
-        v-if="showCollapisbleContent || screenWidth > 680"
-        class="collapisble__content"
-      >
+      <ul :class="getClass()">
         <li><a href="/index.html">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -27,6 +25,7 @@
             <li><a href="/index-cn.html" class="cn">中文</a></li>
           </ul>
         </div>
+        <button @click="logout" class="btn--classic">Me</button>
       </ul>
     </nav>
   </header>
@@ -43,8 +42,42 @@ export default {
     const { width } = useWindowSize();
     const screenWidth = ref(width);
 
-    return { handleClick, showCollapisbleContent, screenWidth };
+    const getClass = () => {
+      if (screenWidth.value < 760 && showCollapisbleContent.value)
+        return "contentBlock";
+      else if (screenWidth.value > 760) return "contentFlex";
+      return "contentNone";
+    };
+
+    const logout = async () => {};
+
+    return { handleClick, showCollapisbleContent, screenWidth, getClass };
   },
 };
 </script>
-<style lang=""></style>
+<style>
+.contentBlock {
+  display: block;
+  position: absolute;
+  border: 2px solid #000000;
+  top: 60px;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  right: 1.3px;
+}
+
+.contentFlex {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.contentFlex .btn--classic {
+  margin-left: 10px;
+}
+
+.contentNone {
+  display: none;
+}
+</style>
