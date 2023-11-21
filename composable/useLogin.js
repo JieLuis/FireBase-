@@ -5,7 +5,6 @@ const useLogin = async (email, password) => {
   const error = ref(null);
   try {
     const res = await projectAuth.signInWithEmailAndPassword(email, password);
-    console.log(res);
   } catch (err) {
     error.value = "账户或密码不匹配";
   }

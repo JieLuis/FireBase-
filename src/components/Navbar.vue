@@ -34,6 +34,7 @@
 import { ref } from "vue";
 import { useWindowSize } from "@vueuse/core";
 import useLogout from "../../composable/useLogout";
+import getUser from "../../composable/getUser";
 export default {
   setup() {
     const showCollapisbleContent = ref(false);
@@ -42,6 +43,7 @@ export default {
     };
     const { width } = useWindowSize();
     const screenWidth = ref(width);
+    const { user } = getUser();
 
     const getClass = () => {
       if (screenWidth.value < 760 && showCollapisbleContent.value)
@@ -69,6 +71,7 @@ export default {
   },
 };
 </script>
+
 <style>
 .contentBlock {
   display: block;
