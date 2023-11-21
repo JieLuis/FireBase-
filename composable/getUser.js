@@ -5,8 +5,9 @@ const getUser = () => {
   const user = ref(projectAuth.currentUser);
   projectAuth.onAuthStateChanged((_user) => {
     user.value = _user;
+    console.log(user.value);
   });
-  console.log(user.value);
+
   return { user };
 };
 
