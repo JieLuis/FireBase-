@@ -41,7 +41,7 @@ body {
 
 nav {
   display: flex;
-  margin-right: 1.5rem;
+
   align-items: center;
 }
 
@@ -482,7 +482,6 @@ footer {
 
 .icon--right {
   position: relative;
-  right: -20px;
 }
 
 .icon:hover {
@@ -517,10 +516,6 @@ footer {
 
 /* collapisble element */
 
-.icon--right {
-  display: none;
-}
-
 .collapisble__content {
   display: flex;
   align-items: center;
@@ -554,6 +549,17 @@ footer {
   transition: transform 1.5s;
   position: relative;
   bottom: 10px;
+}
+
+.btn--classic {
+  background-color: #807474;
+  color: #fff;
+  transition: transform 1.5s;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  padding: 3px 10px;
+  cursor: pointer;
+  border: 0;
 }
 
 .btn--primary:hover {

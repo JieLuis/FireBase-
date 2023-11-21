@@ -33,6 +33,7 @@
 <script>
 import { ref } from "vue";
 import { useWindowSize } from "@vueuse/core";
+import useLogout from "../../composable/useLogout";
 export default {
   setup() {
     const showCollapisbleContent = ref(false);
@@ -49,9 +50,22 @@ export default {
       return "contentNone";
     };
 
-    const logout = async () => {};
+    const logout = async () => {
+      const { error: logoutError } = await useLogout();
+      if (logoutError && logoutError.value) {
+        console.error("Logout error:", logoutError.value);
+      } else {
+        console.log("User logged out successfully");
+      }
+    };
 
-    return { handleClick, showCollapisbleContent, screenWidth, getClass };
+    return {
+      handleClick,
+      showCollapisbleContent,
+      screenWidth,
+      getClass,
+      logout,
+    };
   },
 };
 </script>

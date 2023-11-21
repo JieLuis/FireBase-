@@ -66,11 +66,7 @@
     margin: 50px 60px;
   }
 }
-@media screen and (max-width: 680px) {
-  .icon--right {
-    display: block;
-  }
-
+@media screen and (max-width: 760px) {
   .collapisble__content {
     display: block;
     position: absolute;
@@ -86,6 +82,8 @@
     background-color: #706666;
     border-radius: 5px;
   }
+}
+@media screen and (max-width: 680px) {
   .collapisble--expanded .collapisble__content {
     display: none;
   }
