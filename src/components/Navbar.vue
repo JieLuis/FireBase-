@@ -25,7 +25,10 @@
             <li><a href="/index-cn.html" class="cn">中文</a></li>
           </ul>
         </div>
-        <button @click="logout" class="btn--classic">Me</button>
+        <button @click="logout" class="btn--classic">
+          Me :
+          <div v-if="user">{{ user.displayName }}</div>
+        </button>
       </ul>
     </nav>
   </header>
@@ -67,6 +70,7 @@ export default {
       screenWidth,
       getClass,
       logout,
+      user,
     };
   },
 };
