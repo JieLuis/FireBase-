@@ -1,7 +1,7 @@
 <template>
   <header>
     <a href="/index.html"
-      ><img class="icon" src="../../images/icon.png" alt=""
+      ><img class="icon" src="../../images/icon@4x.png" alt=""
     /></a>
 
     <h1 class="headbar-title">Thinkaboutmoonlight</h1>

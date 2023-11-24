@@ -10,7 +10,7 @@ const useCollection = async (collection, doc) => {
     error.value = `Couldn't send message, error:${err.message}`;
   }
 
-  return error;
+  return { error };
 };
 
 export default useCollection;

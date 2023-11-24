@@ -1,6 +1,9 @@
-<template lang="">
-  <div>chatroom</div>
-  <NewChatForm />
+<template>
+  <div>
+    <h2>聊天室</h2>
+    <ChatWindow />
+    <NewChatForm />
+  </div>
 </template>
 
 <script>
@@ -8,8 +11,9 @@ import getUser from "../../composable/getUser";
 import { watch } from "vue";
 import { useRouter } from "vue-router";
 import NewChatForm from "../components/NewChatForm.vue";
+import ChatWindow from "../components/ChatWindow.vue";
 export default {
-  components: { NewChatForm },
+  components: { NewChatForm, ChatWindow },
 
   setup() {
     const { user } = getUser();
@@ -23,4 +27,4 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style lang="css"></style>

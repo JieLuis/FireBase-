@@ -26,11 +26,10 @@ export default {
         createAt: timestamp(),
       };
       const { error: postError } = await useCollection("message", chat);
-      error.value = postError;
+      error.value = postError.value;
 
       if (!error.value) {
         message.value = "";
-        console.log("successful!");
       }
     };
 

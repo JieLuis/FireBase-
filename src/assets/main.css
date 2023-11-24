@@ -214,7 +214,6 @@ nav a {
 
 .search {
   display: flex;
-
   width: 100%;
   flex-direction: row;
   justify-content: center;
@@ -450,7 +449,7 @@ footer {
 }
 
 .homecontainer {
-  background-image: url(/images/1.jpg);
+  background-image: url(/images/app@1.2x.jpg);
   background-size: 100% 100%;
   flex-direction: row;
   background-attachment: fixed;
